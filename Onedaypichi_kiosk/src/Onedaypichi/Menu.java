@@ -186,7 +186,6 @@ public class Menu {
             } else if (clickedButton.getText().equals("음료")) {
             	centralPanel.add(showdrinkMenu());
             }
-            // 다른 메뉴 항목에 대해서도 필요 시 추가 가능
             
             centralPanel.revalidate(); // 패널 갱신
             centralPanel.repaint(); // 재그리기
@@ -370,7 +369,7 @@ public class Menu {
     
     // 재고 업데이트 메소드
     private void updateStock(String pizzaName, int newStock) {
-        try (Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/Onedaypichi", "root", "1234");
+        try (Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/Onedaypichi", "root", "password");
              PreparedStatement statement = connection.prepareStatement("UPDATE Menu SET stock = ? WHERE name = ?")) {
             statement.setInt(1, newStock);
             statement.setString(2, pizzaName);
@@ -383,7 +382,7 @@ public class Menu {
  // 재고 수량을 데이터베이스에서 가져오는 메소드
     private int getStock(String pizzaName) {
         int stock = 0;
-        try (Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/Onedaypichi", "root", "1234");
+        try (Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/Onedaypichi", "root", "password");
              PreparedStatement statement = connection.prepareStatement("SELECT stock FROM Menu WHERE name = ?")) {
             statement.setString(1, pizzaName);
             ResultSet resultSet = statement.executeQuery();
@@ -576,7 +575,7 @@ public class Menu {
     
     // 재고 업데이트 메소드
     private void updateStock2(String chickenName, int newStock) {
-        try (Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/Onedaypichi", "root", "1234");
+        try (Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/Onedaypichi", "root", "password");
              PreparedStatement statement = connection.prepareStatement("UPDATE Menu SET stock = ? WHERE name = ?")) {
             statement.setInt(1, newStock);
             statement.setString(2, chickenName);
@@ -589,7 +588,7 @@ public class Menu {
     // 재고 수량을 데이터베이스에서 가져오는 메소드
      private int getStock2(String chickenName) {
          int stock = 0;
-            try (Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/Onedaypichi", "root", "1234");
+            try (Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/Onedaypichi", "root", "password");
                  PreparedStatement statement = connection.prepareStatement("SELECT stock FROM Menu WHERE name = ?")) {
                 statement.setString(1, chickenName);
                 ResultSet resultSet = statement.executeQuery();
@@ -779,7 +778,7 @@ public class Menu {
     
     // 재고 업데이트 메소드
     private void updateStock3(String pichName, int newStock) {
-        try (Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/Onedaypichi", "root", "1234");
+        try (Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/Onedaypichi", "root", "password");
              PreparedStatement statement = connection.prepareStatement("UPDATE Menu SET stock = ? WHERE name = ?")) {
             statement.setInt(1, newStock);
             statement.setString(2, pichName);
@@ -792,7 +791,7 @@ public class Menu {
  // 재고 수량을 데이터베이스에서 가져오는 메소드
     private int getStock3(String pichName) {
         int stock = 0;
-        try (Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/Onedaypichi", "root", "1234");
+        try (Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/Onedaypichi", "root", "password");
              PreparedStatement statement = connection.prepareStatement("SELECT stock FROM Menu WHERE name = ?")) {
             statement.setString(1, pichName);
             ResultSet resultSet = statement.executeQuery();
@@ -954,7 +953,7 @@ public class Menu {
     
  // 재고 업데이트 메소드
     private void updateStock4(String dessertName, int newStock) {
-        try (Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/Onedaypichi", "root", "1234");
+        try (Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/Onedaypichi", "root", "password");
              PreparedStatement statement = connection.prepareStatement("UPDATE Menu SET stock = ? WHERE name = ?")) {
             statement.setInt(1, newStock);
             statement.setString(2, dessertName);
@@ -967,7 +966,7 @@ public class Menu {
  // 재고 수량을 데이터베이스에서 가져오는 메소드
     private int getStock4(String dessertName) {
         int stock = 0;
-        try (Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/Onedaypichi", "root", "1234");
+        try (Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/Onedaypichi", "root", "password");
              PreparedStatement statement = connection.prepareStatement("SELECT stock FROM Menu WHERE name = ?")) {
             statement.setString(1, dessertName);
             ResultSet resultSet = statement.executeQuery();
@@ -1129,7 +1128,7 @@ public class Menu {
     
  // 재고 업데이트 메소드
     private void updateStock5(String drinkName, int newStock) {
-        try (Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/Onedaypichi", "root", "1234");
+        try (Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/Onedaypichi", "root", "password");
              PreparedStatement statement = connection.prepareStatement("UPDATE Menu SET stock = ? WHERE name = ?")) {
             statement.setInt(1, newStock);
             statement.setString(2, drinkName);
@@ -1142,7 +1141,7 @@ public class Menu {
  // 재고 수량을 데이터베이스에서 가져오는 메소드
     private int getStock5(String drinkName, int newStock) {
         int stock = 0;
-        try (Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/Onedaypichi", "root", "1234");
+        try (Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/Onedaypichi", "root", "password");
              PreparedStatement statement = connection.prepareStatement("SELECT stock FROM Menu WHERE name = ?")) {
             statement.setString(1, drinkName);
             ResultSet resultSet = statement.executeQuery();

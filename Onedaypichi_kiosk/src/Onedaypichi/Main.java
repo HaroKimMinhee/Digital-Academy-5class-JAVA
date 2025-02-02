@@ -49,7 +49,8 @@ public class Main {
 	public static JPanel pw() { 
 		JPanel p = new JPanel() { // 패널 생성
 			Image background = new ImageIcon("img/pc.png").getImage(); //패널 배경 이미지 설정
-				
+			Image logo = new ImageIcon("img/건국대학교.png").getImage(); //로고 이미지
+			Image logo2 = new ImageIcon("img/적정기술학회.png").getImage();
 			@Override //오버로딩
 			protected void paintComponent(Graphics g) {
 				super.paintComponent(g); //// 부모 클래스의 paintComponent 메서드를 호출하여 기본 그리기 작업 수행
@@ -64,6 +65,25 @@ public class Main {
 				} else {
 					System.out.println("이미지 로드 실패"); // 배경 이미지가 null일 경우 콘솔에 메시지 출력
 				}
+
+				if(logo != null) {
+					g.drawImage(logo, 300, 600, 80, 40, this);
+				} else {
+					System.out.println("로고 이미지 로드 실패");
+				}
+
+				if(logo2 != null) {
+					g.drawImage(logo2, 400, 600, 80, 40, this);
+				} else {
+					System.out.println("로고 이미지 로드 실패");
+				}
+
+				g.setColor(Color.black);
+				g.setFont(new Font("SansSerif", Font.BOLD, 15));
+				g.drawString("적정기술학회\"ICT.스마트\" 부문& 건국대학교\"ICT 창의 연구소\" 한국-미얀마 국제망연결 , 컴퓨팅자원 관리, 공동연구(연구책임자 조승철)", 45, 660);
+
+				g.setFont(new Font("SansSerif",Font.BOLD, 15));
+				g.drawString("기간 : 2025년 09월", 50, 680);
 			}
 		};
 			

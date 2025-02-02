@@ -11,7 +11,7 @@ import java.sql.SQLException;
 public class Onedaypichisql {
 	 private static final String URL = "jdbc:mysql://localhost:3306/Onedaypichi"; // 데이터베이스 URL
 	    private static final String USER = "root"; // 사용자 이름
-	    private static final String PASSWORD = "1234"; // 비밀번호
+	    private static final String PASSWORD = "password"; // 비밀번호
 
 	public static void main(String[] args) {
 	    try {

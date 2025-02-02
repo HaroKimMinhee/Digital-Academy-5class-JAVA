@@ -63,7 +63,7 @@ public class Admin {
                 return;
             }
 
-            try (Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/Onedaypichi", "root", "1234")) {
+            try (Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/Onedaypichi", "root", "password")) {
                 // 현재 재고를 가져오는 쿼리
                 String selectQuery = "SELECT stock FROM Menu WHERE name = ?";
                 try (PreparedStatement selectStatement = connection.prepareStatement(selectQuery)) {
@@ -103,7 +103,7 @@ public class Admin {
         public void actionPerformed(ActionEvent e) {
             String itemName = itemNameField.getText();
 
-            try (Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/Onedaypichi", "root", "1234")) {
+            try (Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/Onedaypichi", "root", "password")) {
                 String query = "SELECT stock FROM Menu WHERE name = ?";
                 try (PreparedStatement statement = connection.prepareStatement(query)) {
                     statement.setString(1, itemName);
